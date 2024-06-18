@@ -1,0 +1,288 @@
+import 'package:flutter/material.dart';
+
+import '../constants/projects_data.dart';
+
+class MobileProjects extends StatelessWidget {
+  const MobileProjects({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          const SizedBox(height: 30,),
+          const Text("PROJECTS",
+            style: TextStyle(
+                fontSize: 25,
+                fontFamily: 'SourceSans3-Bold',
+                fontWeight: FontWeight.bold,
+                color: Colors.black
+            ),
+          ),
+          const SizedBox(height: 10,),
+          Container(
+            width: 35,
+            height: 5,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+              color: const Color(0xFF8E05C2),
+            ),
+          ),
+          const SizedBox(height: 16,),
+          Container(
+            margin: const EdgeInsets.only(left: 32, right: 32),
+            constraints: const BoxConstraints(maxWidth: 700,),
+            child: const Text('I have worked with different projects and I am displaying some of them here.',
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: 'SourceSans3-Regular',
+                color: Colors.black54,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 35,),
+          Column(
+            children: [
+              for(int i=0; i<4; i++)
+                ProjectCard(
+                  image: projects[i]['image'],
+                  projectName: projects[i]['projectName'],
+                  projectType: projects[i]['projectType'],
+                  isGithubLink: projects[i]['isGithubLink'],
+                  isWebLink: projects[i]['isWebLink'],
+                  description: projects[i]['description'],
+                  tools: projects[i]['tools'],
+                ),
+            ],
+          ),
+          const SizedBox(height: 50,),
+        ],
+      ),
+    );
+  }
+}
+
+class ProjectCard extends StatelessWidget {
+
+  final String image;
+
+  const ProjectCard({super.key,
+    required this.image,
+    required this.description,
+    required this.tools,
+    required this.projectName,
+    required this.projectType,
+    required this.isGithubLink,
+    required this.isWebLink,
+  });
+
+  final String projectName;
+  final String projectType;
+  final bool isGithubLink;
+  final bool isWebLink;
+  final String description;
+  final List<String> tools;
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: Stack(
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Container(
+              width: 375,
+              height: 295,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFFF1F2F5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF8E05C2).withOpacity(0.1),
+                      blurRadius: 5,
+                      offset: const Offset(2, 4),
+                    ),
+                  ]
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(25),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        TopSection(
+                          image: image,
+                          projectName: projectName,
+                          projectType: projectType,
+                          isGithubLink: isGithubLink,
+                          isWebLink: isWebLink,
+                        ),
+                        const SizedBox(height: 20,),
+                        Text(description,
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontFamily: 'SourceSans3-Regular',
+                              color: Colors.black
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            for(int i=0; i<tools.length; i++)
+                              CustomBox(toolName: tools[i]),
+                          ],
+                        ),
+                        FilledButton(
+                          onPressed: (){},
+                          style: FilledButton.styleFrom(
+                              backgroundColor: const Color(0xFF8E05C2),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5)
+                              )
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.only(top: 7, bottom: 7, left: 5.5, right: 5.5),
+                            child: Text('View',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontFamily: 'SourceSans3-Regular',
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TopSection extends StatelessWidget {
+  const TopSection({
+    super.key,
+    required this.image,
+    required this.projectName,
+    required this.projectType,
+    required this.isGithubLink,
+    required this.isWebLink,
+  });
+
+  final String image;
+  final String projectName;
+  final String projectType;
+  final bool isGithubLink;
+  final bool isWebLink;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Container(
+              clipBehavior: Clip.antiAlias,
+              width : 50,
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Image.asset(image, fit: BoxFit.cover,),
+            ),
+            const SizedBox(width: 12,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(projectName,
+                  style: const TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'SourceSans3-Bold',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                  ),
+                ),
+                Text(projectType,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      fontFamily: 'SourceSans3-Regular',
+                      color: Colors.black87
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            if(isGithubLink == true)
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 2,
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset('assets/images/github.png',),
+                ),
+              )
+          ],
+        )
+      ],
+    );
+  }
+}
+
+class CustomBox extends StatelessWidget {
+
+  final String toolName;
+
+  const CustomBox({
+    super.key,
+    required this.toolName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(right: 12),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5)
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 7,bottom: 7, left: 13,right: 13),
+        child: Text(toolName,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            fontFamily: 'SourceSans3-Regular',
+            color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
