@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/mobile/aboutme.dart';
 import 'package:jaydipbaraiya/mobile/achievements.dart';
 import 'package:jaydipbaraiya/mobile/contactme.dart';
-import 'package:jaydipbaraiya/mobile/mobile_home.dart';
+import 'package:jaydipbaraiya/mobile/home.dart';
 import 'package:jaydipbaraiya/mobile/projects.dart';
+import 'package:jaydipbaraiya/mobile/resume.dart';
 import 'package:jaydipbaraiya/mobile/skillstack.dart';
 import 'package:jaydipbaraiya/website/aboutme.dart';
 import 'package:jaydipbaraiya/website/achievements.dart';
@@ -11,13 +12,11 @@ import 'package:jaydipbaraiya/website/contactme.dart';
 import 'package:jaydipbaraiya/website/footer.dart';
 import 'package:jaydipbaraiya/website/projects.dart';
 import 'package:jaydipbaraiya/website/resume.dart';
-import 'package:jaydipbaraiya/website/resume1.dart';
 import 'package:jaydipbaraiya/website/skillstack.dart';
-import 'package:jaydipbaraiya/website/web_home.dart';
+import 'package:jaydipbaraiya/website/home.dart';
 import 'package:jaydipbaraiya/widgets/custom_drawer.dart';
 import 'package:jaydipbaraiya/widgets/message_button.dart';
 import 'package:jaydipbaraiya/widgets/mobile_menu.dart';
-import 'package:jaydipbaraiya/widgets/nav_button.dart';
 import 'package:jaydipbaraiya/widgets/navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -81,8 +80,10 @@ class _HomePageState extends State<HomePage> {
                     else
                       MobileSkillStack(key: navBarKeys[2],),
 
-                    // if(constraints.maxWidth >= 1000.0)
-                      WebResume1(key: navBarKeys[3],),
+                    if(constraints.maxWidth >= 1000.0)
+                      WebResume(key: navBarKeys[3],)
+                    else
+                      MobileResume(key: navBarKeys[3],),
 
                     if(constraints.maxWidth >= 1000.0)
                       WebProjects(key: navBarKeys[4],)

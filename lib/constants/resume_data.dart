@@ -3,6 +3,8 @@ String resumeSubTitle = 'Recently, I completed an internship at DevTown in the D
     ' where i learn Python and its library,SQL, Machine learning, Deep learning, and Web scraping.'
     ' Also, I have worked with Different Web Development languages ';
 
+String resumeLink = 'assets/documents/Jaydip_Resume.pdf';
+
 List<Map> educations = [
   {
     'degree' : "BACHELOR OF ENGINEERING",

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
-
 import '../widgets/social_card.dart';
 
 class WebAboutMe extends StatelessWidget {
