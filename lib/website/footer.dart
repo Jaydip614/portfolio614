@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jaydipbaraiya/constants/footer_data.dart';
+import 'package:jaydipbaraiya/styles/mycolors.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
+import 'dart:js' as js;
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -10,28 +14,23 @@ class Footer extends StatelessWidget {
 
     return Container(
       width: screenWidth,
-      // color: Colors.black,
-      color: const Color(0xFF520077),
+      color: MyColors.footerColor,
       child: Column(
         children: [
           const SizedBox(height: 30,),
-          const Text("JAYDIP BARAIYA",
-            style: TextStyle(
-                fontSize: 25,
-                fontFamily: 'SourceSans3-Bold',
-                fontWeight: FontWeight.bold,
-                color: Colors.white
+          Text(title,
+            style: boldTextStyle(
+              fontSize: 25,
+              color: MyColors.white,
             ),
           ),
           const SizedBox(height: 12,),
-          const Padding(
-            padding: EdgeInsets.only(left: 25, right: 25),
-            child: Text('A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product',
-                style: TextStyle(
+          Padding(
+            padding: const EdgeInsets.only(left: 25, right: 25),
+            child: Text(subTitle,
+                style: regularItalicTextStyle(
                   fontSize: 15,
-                  fontFamily: 'SourceSans3-Regular',
-                  fontStyle: FontStyle.italic,
-                  color: Colors.white,
+                  color: MyColors.white,
                 ),
               textAlign: TextAlign.center,
               ),
@@ -40,23 +39,12 @@ class Footer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                  width: 32,
-                  height: 32,
-                  child: Image.asset('assets/images/linkedin-white.png',),
-              ),
-              const SizedBox(width: 7,),
-              SizedBox(
-                width: 50,
-                height: 50,
-                child: Image.asset('assets/images/github-white.png',),
-              ),
-              const SizedBox(width: 7,),
-              SizedBox(
-                width: 30,
-                height: 30,
-                child: Image.asset('assets/images/instagram-white.png',),
-              ),
+              for(int i=0; i<socialLinks.length; i++)
+                CustomSocialIcon(
+                  size: socialLinks[i]['size'],
+                  image: socialLinks[i]['image'],
+                  link: socialLinks[i]['link'],
+                ),
             ],
           ),
           const SizedBox(height: 40,),
@@ -68,7 +56,7 @@ class Footer extends StatelessWidget {
                   SizedBox(
                     width: 15,
                     height: 15,
-                    child: Image.asset('assets/images/copyright-white.png'),
+                    child: Image.asset(copyRightImage),
                   ),
                   const SizedBox(height: 3,)
                 ],
@@ -113,3 +101,34 @@ class Footer extends StatelessWidget {
     );
   }
 }
+
+class CustomSocialIcon extends StatelessWidget {
+  const CustomSocialIcon({
+    super.key,
+    required this.size,
+    required this.image,
+    required this.link,
+  });
+
+  final double size;
+  final String image;
+  final String link;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 7),
+      child: InkWell(
+        onTap: (){
+          js.context.callMethod('open', [link]);
+        },
+        child: SizedBox(
+          width: size,
+          height: size,
+          child: Image.asset(image),
+        ),
+      ),
+    );
+  }
+}
+

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
+import 'package:jaydipbaraiya/styles/mycolors.dart';
 import 'package:jaydipbaraiya/styles/textstyles.dart';
 import 'package:jaydipbaraiya/widgets/page_subtitle.dart';
 import '../widgets/page_title.dart';
@@ -33,7 +34,7 @@ class WebAboutMe extends StatelessWidget {
                             child: Image.asset(myImage),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(top: 30, left: 15),
+                            margin: const EdgeInsets.only(top: 25, left: 20),
                             width: 275,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -43,12 +44,11 @@ class WebAboutMe extends StatelessWidget {
                                   padding: const EdgeInsets.only(bottom: 15),
                                   child: Row(
                                     children: [
-                                      Icon(myInfo[i]['icon'], color: const Color(0xFFD35DFF),),
+                                      Icon(myInfo[i]['icon'], color: MyColors.purple10,),
                                       const SizedBox(width: 13,),
                                       Text(myInfo[i]['data'],
-                                        style: const TextStyle(
-                                            fontSize: 17,
-                                            fontFamily: 'SourceSans3-Regular',
+                                        style: regularTextStyle(
+                                          fontSize: 18,
                                         ),
                                       ),
                                     ],
@@ -69,21 +69,17 @@ class WebAboutMe extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(height: 30,),
-                          const Text('Get to know me!',
-                            style: TextStyle(
-                                fontFamily: 'SourceSans3-Bold',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 27
+                          Text('Get to know me!',
+                            style: boldTextStyle(
+                              fontSize: 27,
                             ),
                           ),
                           for(int i=0; i<paragraphs.length; i++)
                           Padding(
                             padding: const EdgeInsets.only(top: 20),
                             child: Text(paragraphs[i],
-                              style: const TextStyle(
+                              style: regularTextStyle(
                                 fontSize: 18.5,
-                                fontFamily: 'SourceSans3-Regular',
-                                color: Colors.black87,
                               ),
                               textAlign: TextAlign.justify
                             ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
+import 'package:jaydipbaraiya/styles/mycolors.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
 import '../widgets/page_title.dart';
 
 class WebAchievements extends StatelessWidget {
@@ -55,17 +57,16 @@ class AchievementCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 335,
-      height: 385,
+      height: 395,
       decoration: BoxDecoration(
-        // color: const Color(0xFFF1F2F5),
-        color: Colors.white,
+        color: MyColors.white,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.black12
+          color: MyColors.black12
         ),
         boxShadow: const [
           BoxShadow(
-            color: Colors.black12,
+            color: MyColors.black12,
             blurRadius: 5,
           )
         ]
@@ -73,7 +74,7 @@ class AchievementCard extends StatelessWidget {
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 25, left: 25, right: 25, bottom: 20),
+            padding: const EdgeInsets.only(top: 25, left: 25, right: 25, bottom: 25),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -84,36 +85,31 @@ class AchievementCard extends StatelessWidget {
                       width: 150,
                       height: 150,
                       decoration: const BoxDecoration(
-                        color: Color(0xFFF1F2F5),
+                        color: MyColors.white01,
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(image, fit: BoxFit.cover,),
                     ),
                     const SizedBox(height: 20,),
                     Text(title,
-                      style: const TextStyle(
+                      style: boldTextStyle(
                         fontSize: 18,
-                        fontFamily: 'SourceSans3-Bold',
-                        color: Colors.black,
                       ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 10,),
                     Text(description,
-                      style: const TextStyle(
+                      style: regularTextStyle(
                         fontSize: 16,
-                        fontFamily: 'SourceSans3-Regular',
-                        color: Colors.black,
                       ),
                       textAlign: TextAlign.center,
                     ),
                   ],
                 ),
                 Text(time,
-                  style: const TextStyle(
+                  style: regularTextStyle(
                     fontSize: 15,
-                    fontFamily: 'SourceSans3-Regular',
-                    color: Colors.black45,
+                    color: MyColors.black45,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -131,7 +127,7 @@ class AchievementCard extends StatelessWidget {
                     onPressed: (){},
                     icon: const Icon(
                       Icons.open_in_new,
-                      color: Colors.black54,
+                      color: MyColors.black54,
                     ),
                   ),
                 ],
