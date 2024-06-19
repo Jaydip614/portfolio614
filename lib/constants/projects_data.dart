@@ -7,7 +7,7 @@ List<Map> projects = [
     'image': "assets/images/uiux-design.png",
     'projectType': 'UI Design',
     'isGithubLink': false,
-    'isWebLink': false,
+    'isWebLink': true,
     'description': "Turn hand gestures into creative AI interactions: "
         "To help customer at affordable price without any commission to explore heritage of India",
     'tools': ['Figma', 'UI/UX'],
@@ -25,9 +25,9 @@ List<Map> projects = [
   },
   {
     'projectName': 'My Portfolio',
-    'image': "assets/images/temp-image.png",
+    'image': "assets/images/temp-image3.png",
     'projectType': 'Web Application',
-    'isGithubLink': false,
+    'isGithubLink': true,
     'isWebLink': false,
     'description': "Turn hand gestures into creative AI interactions: "
         "Draw, erase, and watch as AI interprets your sketches in real-time"
@@ -38,8 +38,8 @@ List<Map> projects = [
     'projectName': 'FreshStart',
     'image': "assets/images/temp-image3.png",
     'projectType': 'Website',
-    'isGithubLink': false,
-    'isWebLink': false,
+    'isGithubLink': true,
+    'isWebLink': true,
     'description': "Turn hand gestures into creative AI interactions: "
         "Draw, erase, and watch as AI interprets your sketches in real-time",
     'tools': ['HTML', 'CSS', 'JavaScript',],

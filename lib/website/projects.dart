@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../styles/textstyles.dart';
 import '../constants/projects_data.dart';
+import '../styles/mycolors.dart';
 import '../widgets/page_subtitle.dart';
 import '../widgets/page_title.dart';
 
@@ -9,7 +11,7 @@ class WebProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: MyColors.white,
       child: Column(
           children: [
             const PageTitle(title: 'PROJECTS', isMobile: false,),
@@ -93,12 +95,12 @@ class ProjectCard extends StatelessWidget {
                 height: 320,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: const Color(0xFFF1F2F5),
-                  boxShadow: [
+                  color: MyColors.white01,
+                  boxShadow: const [
                     BoxShadow(
-                      color: const Color(0xFF8E05C2).withOpacity(0.1),
-                      blurRadius: 5,
-                      offset: const Offset(2, 4),
+                      color: MyColors.black12,
+                      blurRadius: 7,
+                      offset: Offset(0, 5),
                     ),
                   ]
                 ),
@@ -118,10 +120,8 @@ class ProjectCard extends StatelessWidget {
                           ),
                           const SizedBox(height: 25,),
                           Text(description,
-                            style: const TextStyle(
-                                fontSize: 17,
-                                fontFamily: 'SourceSans3-Regular',
-                                color: Colors.black
+                            style: regularTextStyle(
+                              fontSize: 17,
                             ),
                             textAlign: TextAlign.justify,
                           ),
@@ -139,22 +139,21 @@ class ProjectCard extends StatelessWidget {
                           // FilledButton(
                           //   onPressed: (){},
                           //   style: FilledButton.styleFrom(
-                          //       backgroundColor: const Color(0xFF8E05C2),
+                          //       backgroundColor: MyColors.purple,
                           //       shape: RoundedRectangleBorder(
                           //           borderRadius: BorderRadius.circular(5)
                           //       )
                           //   ),
-                          //   child: const Padding(
-                          //     padding: EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
+                          //   child: Padding(
+                          //     padding: const EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
                           //     child: Text('View',
-                          //       style: TextStyle(
+                          //       style: regularTextStyle(
                           //         fontSize: 17,
-                          //         fontFamily: 'SourceSans3-Regular',
-                          //         color: Colors.white,
+                          //         color: MyColors.white,
                           //       ),
                           //     ),
                           //   ),
-                          // )
+                          // ),
                         ],
                       )
                     ],
@@ -187,6 +186,7 @@ class TopSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
           children: [
@@ -204,18 +204,14 @@ class TopSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(projectName,
-                  style: const TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'SourceSans3-Bold',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black
+                  style: boldTextStyle(
+                    fontSize: 25,
                   ),
                 ),
                 Text(projectType,
-                  style: const TextStyle(
-                      fontSize: 17,
-                      fontFamily: 'SourceSans3-Regular',
-                      color: Colors.black54
+                  style: regularTextStyle(
+                    fontSize: 17,
+                    color: MyColors.black54,
                   ),
                 ),
               ],
@@ -224,25 +220,55 @@ class TopSection extends StatelessWidget {
         ),
         Row(
           children: [
-            if(isGithubLink == true)
-            Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.white,
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 2,
+            if(isWebLink == true)
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: MyColors.white,
+                  border: Border.all(
+                    width: 1,
+                    color: MyColors.black12
                   ),
-                ],
+                  boxShadow: const [
+                    BoxShadow(
+                      color: MyColors.black12,
+                      blurRadius: 2,
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset('assets/images/web-black-logo.png',),
+                ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Image.asset('images/github.png',),
+            if(isGithubLink == true)
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0),
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: MyColors.white,
+                  border: Border.all(
+                      width: 1,
+                      color: MyColors.black12
+                  ),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: MyColors.black12,
+                      blurRadius: 2,
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset('assets/images/github.png',),
+                ),
               ),
-            )
+            ),
           ],
         )
       ],
@@ -263,7 +289,7 @@ class CustomBox extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 17),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: MyColors.white,
           borderRadius: BorderRadius.circular(5)
       ),
       child: Padding(
