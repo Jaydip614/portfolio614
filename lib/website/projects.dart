@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/projects_data.dart';
+import '../constants/projects_data.dart';
+import '../styles/page_subtitle.dart';
 import '../styles/page_title.dart';
 
 class WebProjects extends StatelessWidget {
@@ -12,17 +13,7 @@ class WebProjects extends StatelessWidget {
       child: Column(
           children: [
             const PageTitle(title: 'PROJECTS', isMobile: false,),
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 700,),
-              child: const Text('I have worked with different projects and I am displaying some of them here.',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'SourceSans3-Regular',
-                  color: Colors.black54,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            PageSubTitle(subTitle: subTitle, isMobile: false,),
             const SizedBox(height: 30,),
             Container(
               margin: const EdgeInsets.only(left: 100, right: 100),

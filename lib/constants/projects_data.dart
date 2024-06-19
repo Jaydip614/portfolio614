@@ -1,4 +1,6 @@
 
+String subTitle = 'I have worked with different projects and I am displaying some of them here.';
+
 List<Map> projects = [
   {
     'projectName': 'Tech World',

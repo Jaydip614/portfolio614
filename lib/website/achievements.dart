@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
-
 import '../styles/page_title.dart';
 
 class WebAchievements extends StatelessWidget {

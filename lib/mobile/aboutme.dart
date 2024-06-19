@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
+import '../styles/page_subtitle.dart';
 import '../styles/page_title.dart';
 import '../widgets/social_card.dart';
 
@@ -12,14 +13,7 @@ class MobileAboutMe extends StatelessWidget {
     return Column(
       children: [
         const PageTitle(title: 'ABOUT', isMobile: true,),
-        Text(subTitleMobile,
-            style: const TextStyle(
-              fontSize: 17,
-              fontFamily: 'SourceSans3-Regular',
-              color: Colors.black54,
-            ),
-          textAlign: TextAlign.center,
-          ),
+        PageSubTitle(subTitle: subTitleMobile, isMobile: false,),
         const SizedBox(height: 35,),
         SizedBox(
           width: 250,

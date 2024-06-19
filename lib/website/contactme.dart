@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../constants/contactme_data.dart';
+import '../styles/page_subtitle.dart';
 import '../styles/page_title.dart';
 
 class WebContactMe extends StatelessWidget {
@@ -24,17 +26,7 @@ class WebContactMe extends StatelessWidget {
             child: Column(
               children: [
                 const PageTitle(title: 'CONTACT', isMobile: false,),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 700,),
-                  child: const Text('Feel free to Contact me by submitting the form below and I will get back to you as soon as possible',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'SourceSans3-Regular',
-                      color: Colors.black54,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+                PageSubTitle(subTitle: subTitle, isMobile: false,),
                 const SizedBox(height: 50,),
                 Container(
                     margin: const EdgeInsets.only(left: 75, right: 75),

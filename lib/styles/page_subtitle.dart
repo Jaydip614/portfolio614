@@ -18,7 +18,7 @@ class PageSubTitle extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 700,),
       child: Text(subTitle,
         style: secondaryTextStyle(
-          fontSize: isMobile == true ? 17 : 18,
+          fontSize: isMobile == true ? 16 : 18,
         ),
         textAlign: TextAlign.center,
       ),
