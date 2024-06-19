@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
-import '../styles/page_subtitle.dart';
-import '../styles/page_title.dart';
+import '../widgets/page_subtitle.dart';
+import '../widgets/page_title.dart';
 import '../widgets/social_card.dart';
 
 class MobileAboutMe extends StatelessWidget {

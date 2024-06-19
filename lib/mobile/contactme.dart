@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/contactme_data.dart';
-import '../styles/page_subtitle.dart';
-import '../styles/page_title.dart';
+import '../widgets/page_subtitle.dart';
+import '../widgets/page_title.dart';
 
 class MobileContactMe extends StatelessWidget {
   const MobileContactMe({super.key});

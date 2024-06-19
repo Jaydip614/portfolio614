@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles/page_title.dart';
+import '../widgets/page_title.dart';
 
 class WebResume1 extends StatefulWidget {
   const WebResume1({super.key});

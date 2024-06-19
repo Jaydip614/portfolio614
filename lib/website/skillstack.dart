@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/skills_data.dart';
-import 'package:jaydipbaraiya/styles/page_title.dart';
+import '../widgets/page_title.dart';
 
 class WebSkillStack extends StatelessWidget {
   const WebSkillStack({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/projects_data.dart';
-import '../styles/page_subtitle.dart';
-import '../styles/page_title.dart';
+import '../widgets/page_subtitle.dart';
+import '../widgets/page_title.dart';
 
 class MobileProjects extends StatelessWidget {
   const MobileProjects({super.key});

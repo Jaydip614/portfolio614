@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
-import '../styles/page_title.dart';
+import '../widgets/page_title.dart';
 
 class MobileAchievements extends StatelessWidget {
   const MobileAchievements({super.key});

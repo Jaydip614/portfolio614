@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
 import 'package:jaydipbaraiya/styles/textstyles.dart';
-import 'package:jaydipbaraiya/styles/page_subtitle.dart';
-import 'package:jaydipbaraiya/styles/page_title.dart';
+import 'package:jaydipbaraiya/widgets/page_subtitle.dart';
+import '../widgets/page_title.dart';
 import '../widgets/social_card.dart';
 
 class WebAboutMe extends StatelessWidget {

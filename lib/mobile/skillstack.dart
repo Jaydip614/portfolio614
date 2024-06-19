@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/skills_data.dart';
-import '../styles/page_title.dart';
+import '../widgets/page_title.dart';
 
 class MobileSkillStack extends StatelessWidget {
   const MobileSkillStack({super.key});

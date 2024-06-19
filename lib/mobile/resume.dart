@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/resume_data.dart';
 import 'package:jaydipbaraiya/widgets/custom_timeline.dart';
-import '../styles/page_title.dart';
 import 'dart:js' as js;
+
+import '../widgets/page_title.dart';
 
 class MobileResume extends StatelessWidget {
   const MobileResume({super.key});
