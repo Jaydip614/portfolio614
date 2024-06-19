@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jaydipbaraiya/constants/home_data.dart';
 
 class MobileHomeScreen extends StatelessWidget {
   const MobileHomeScreen({
@@ -9,6 +10,7 @@ class MobileHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     
@@ -17,8 +19,7 @@ class MobileHomeScreen extends StatelessWidget {
         SizedBox(
           width: screenWidth,
           height: screenHeight,
-          child: Image.asset(
-            'assets/images/myportfolio_back.png',
+          child: Image.asset(backImage,
             fit: BoxFit.cover,
           ),
         ),
@@ -28,11 +29,11 @@ class MobileHomeScreen extends StatelessWidget {
               const SizedBox(height: 100,),
               SizedBox(
                 width: 275,
-                child: Image.asset('assets/images/home_image3.png',),
+                child: Image.asset(vectorImage),
               ),
               const SizedBox(height: 30,),
-              const Text("HEY, I'M JAYDIP BARAIYA",
-                style: TextStyle(
+              Text(title,
+                style: const TextStyle(
                     fontSize: 30,
                     fontFamily: 'SourceSans3-Bold',
                     fontWeight: FontWeight.bold,
@@ -40,26 +41,13 @@ class MobileHomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10,),
-              const Text('Flutter Developer, Transforming ideas into',
-                style: TextStyle(
+              Text(subTitleMobile,
+                style: const TextStyle(
                   fontSize: 17.5,
                   fontFamily: 'SourceSans3-Regular',
                   color: Colors.black87,
                 ),
-              ),
-              const Text('interactive Application for seamless user',
-                style: TextStyle(
-                  fontSize: 17.5,
-                  fontFamily: 'SourceSans3-Regular',
-                  color: Colors.black87,
-                ),
-              ),
-              const Text('experiences...',
-                style: TextStyle(
-                  fontSize: 17.5,
-                  fontFamily: 'SourceSans3-Regular',
-                  color: Colors.black87,
-                ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 50,),
               FilledButton(

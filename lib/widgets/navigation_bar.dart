@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/nav_items.dart';
+import 'package:jaydipbaraiya/constants/navbar_data.dart';
 import 'package:jaydipbaraiya/widgets/nav_button.dart';
 
 class WebNavigationBar extends StatefulWidget {

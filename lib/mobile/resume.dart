@@ -3,6 +3,8 @@ import 'package:jaydipbaraiya/constants/resume_data.dart';
 import 'package:jaydipbaraiya/widgets/custom_timeline.dart';
 import 'dart:js' as js;
 
+import '../styles/mobile_page_title.dart';
+
 class MobileResume extends StatelessWidget {
   const MobileResume({super.key});
 
@@ -10,25 +12,7 @@ class MobileResume extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 30,),
-        const Text("RESUME",
-          style: TextStyle(
-              fontSize: 25,
-              fontFamily: 'SourceSans3-Bold',
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-          ),
-        ),
-        const SizedBox(height: 10,),
-        Container(
-          width: 35,
-          height: 5,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            color: const Color(0xFF8E05C2),
-          ),
-        ),
-        const SizedBox(height: 16,),
+        const MobilePageTitle(title: 'RESUME'),
         Padding(
           padding: const EdgeInsets.only(left: 32, right: 32),
           child: ConstrainedBox(

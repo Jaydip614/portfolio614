@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jaydipbaraiya/constants/home_data.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
 
 class WebHomeScreen extends StatelessWidget {
   const WebHomeScreen({
@@ -18,7 +20,7 @@ class WebHomeScreen extends StatelessWidget {
         SizedBox(
           width: screenWidth,
             height: screenHeight,
-            child: Image.asset('assets/images/flutter_back5.png',
+            child: Image.asset(backImage,
             fit: BoxFit.cover,
             ),
         ),
@@ -41,28 +43,23 @@ class WebHomeScreen extends StatelessWidget {
                       width: screenWidth / 2,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text("HEY, I'M JAYDIP BARAIYA",
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontFamily: 'SourceSans3-Bold',
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
+                          Text(title,
+                            style: textStyleBold(
+                              fontSize: 52,
+                            )
                           ),
-                          const SizedBox(height: 12,),
-                          const Text('Flutter Developer: Transforming ideas \ninto interactive Application for seamless user experiences...',
-                            style: TextStyle(
+                          const SizedBox(height: 15,),
+                          Text(subTitle,
+                            style: textStylePrimary(
                               fontSize: 21,
-                              fontFamily: 'SourceSans3-Regular',
-                              color: Colors.black87,
+                              color: Colors.black87
                             ),
+                            textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 50,),
-                           Padding(
-                             padding: const EdgeInsets.only(left: 150),
-                             child: FilledButton(
+                           FilledButton(
                                 onPressed: (){
                                   onButtonTap(4);
                                 },
@@ -83,7 +80,6 @@ class WebHomeScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                           ),
                           const SizedBox(height: 50,),
                         ],
                       ),
@@ -98,7 +94,7 @@ class WebHomeScreen extends StatelessWidget {
           top: screenHeight / 4,
           child: SizedBox(
             width: screenWidth / 3.7,
-            child: Image.asset('assets/images/home_image3.png',),
+            child: Image.asset(vectorImage),
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/projects_data.dart';
+import '../styles/web_page_title.dart';
 
 class WebProjects extends StatelessWidget {
   const WebProjects({super.key});
@@ -10,25 +11,7 @@ class WebProjects extends StatelessWidget {
       color: Colors.white,
       child: Column(
           children: [
-            const SizedBox(height: 50,),
-            const Text("PROJECTS",
-              style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: 'SourceSans3-Bold',
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black
-              ),
-            ),
-            const SizedBox(height: 12,),
-            Container(
-              width: 45,
-              height: 5,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(3),
-                color: const Color(0xFF8E05C2),
-              ),
-            ),
-            const SizedBox(height: 30,),
+            const WebPageTitle(title: 'PROJECTS'),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700,),
               child: const Text('I have worked with different projects and I am displaying some of them here.',

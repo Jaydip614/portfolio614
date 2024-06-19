@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
 
+import '../styles/mobile_page_title.dart';
+
 class MobileAchievements extends StatelessWidget {
   const MobileAchievements({super.key});
 
@@ -9,25 +11,8 @@ class MobileAchievements extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 50,),
-        const Text("ACHIEVEMENTS",
-          style: TextStyle(
-              fontSize: 25,
-              fontFamily: 'SourceSans3-Bold',
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-          ),
-        ),
+        const MobilePageTitle(title: 'ACHIEVEMENTS'),
         const SizedBox(height: 10,),
-        Container(
-          width: 35,
-          height: 5,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            color: const Color(0xFF8E05C2),
-          ),
-        ),
-        const SizedBox(height: 30,),
         Container(
           constraints: const BoxConstraints(
             maxWidth: 1100,

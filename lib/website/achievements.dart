@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
 
+import '../styles/web_page_title.dart';
+
 class WebAchievements extends StatelessWidget {
   const WebAchievements({super.key});
 
@@ -9,25 +11,8 @@ class WebAchievements extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 50,),
-        const Text("ACHIEVEMENTS",
-          style: TextStyle(
-              fontSize: 36,
-              fontFamily: 'SourceSans3-Bold',
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-          ),
-        ),
-        const SizedBox(height: 12,),
-        Container(
-          width: 45,
-          height: 5,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            color: const Color(0xFF8E05C2),
-          ),
-        ),
-        const SizedBox(height: 30,),
+        const WebPageTitle(title: 'ACHIEVEMENTS'),
+        const SizedBox(height: 10,),
         Container(
           constraints: const BoxConstraints(
             maxWidth: 1100,
@@ -37,7 +22,7 @@ class WebAchievements extends StatelessWidget {
             spacing: 25,
             runSpacing: 25,
             children: [
-              for(int i=0; i<achievements.length; i++)
+              for(int i=0; i<3; i++)
                 AchievementCard(
                   image: achievements[i]['image'],
                   title: achievements[i]['title'],

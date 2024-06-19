@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/resume_data.dart';
 import 'package:jaydipbaraiya/widgets/custom_timeline.dart';
+import '../styles/web_page_title.dart';
 import 'dart:js' as js;
 
 class WebResume extends StatelessWidget {
@@ -10,27 +11,9 @@ class WebResume extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 50,),
-        const Text("RESUME",
-          style: TextStyle(
-              fontSize: 36,
-              fontFamily: 'SourceSans3-Bold',
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-          ),
-        ),
-        const SizedBox(height: 12,),
-        Container(
-          width: 45,
-          height: 5,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            color: const Color(0xFF8E05C2),
-          ),
-        ),
-        const SizedBox(height: 30,),
+        const WebPageTitle(title: 'RESUME'),
         Padding(
-          padding: const EdgeInsets.only(left: 100, right: 100),
+          padding: const EdgeInsets.only(left: 150, right: 150),
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1050,),
             child: Text(resumeSubTitle,

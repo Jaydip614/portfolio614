@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/nav_items.dart';
+import '../constants/navbar_data.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/skill_data.dart';
+import 'package:jaydipbaraiya/constants/skills_data.dart';
+import 'package:jaydipbaraiya/styles/web_page_title.dart';
 
 class WebSkillStack extends StatelessWidget {
   const WebSkillStack({super.key});
@@ -11,25 +12,8 @@ class WebSkillStack extends StatelessWidget {
 
     return Column(
             children: [
-              const SizedBox(height: 50,),
-              const Text("SKILL STACK",
-                style: TextStyle(
-                    fontSize: 36,
-                    fontFamily: 'SourceSans3-Bold',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black
-                ),
-              ),
-              const SizedBox(height: 12,),
-              Container(
-                width: 45,
-                height: 5,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(3),
-                  color: const Color(0xFF8E05C2),
-                ),
-              ),
-              const SizedBox(height: 30,),
+              const WebPageTitle(title: 'SKILL STACK'),
+              const SizedBox(height: 10,),
               Container(
                 constraints: BoxConstraints(
                   maxWidth: screenWidth / 1.35,

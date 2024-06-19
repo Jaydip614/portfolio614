@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/skill_data.dart';
+import 'package:jaydipbaraiya/constants/skills_data.dart';
+
+import '../styles/mobile_page_title.dart';
 
 class MobileSkillStack extends StatelessWidget {
   const MobileSkillStack({super.key});
@@ -11,25 +13,8 @@ class MobileSkillStack extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 30,),
-        const Text("SKILL STACK",
-          style: TextStyle(
-              fontSize: 25,
-              fontFamily: 'SourceSans3-Bold',
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-          ),
-        ),
+        const MobilePageTitle(title: 'SKILL STACK'),
         const SizedBox(height: 10,),
-        Container(
-          width: 35,
-          height: 5,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            color: const Color(0xFF8E05C2),
-          ),
-        ),
-        const SizedBox(height: 30,),
         Container(
           width: screenWidth,
           color: const Color(0xFFF2F3F5),
