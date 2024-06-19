@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles/web_page_title.dart';
+import '../styles/page_title.dart';
 
 class WebContactMe extends StatelessWidget {
   const WebContactMe({super.key});
@@ -23,7 +23,7 @@ class WebContactMe extends StatelessWidget {
             width: screenWidth,
             child: Column(
               children: [
-                const WebPageTitle(title: 'CONTACT'),
+                const PageTitle(title: 'CONTACT', isMobile: false,),
                 ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 700,),
                   child: const Text('Feel free to Contact me by submitting the form below and I will get back to you as soon as possible',

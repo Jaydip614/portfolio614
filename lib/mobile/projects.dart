@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/projects_data.dart';
-import '../styles/mobile_page_title.dart';
+import '../styles/page_title.dart';
 
 class MobileProjects extends StatelessWidget {
   const MobileProjects({super.key});
@@ -11,7 +11,7 @@ class MobileProjects extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          const MobilePageTitle(title: 'PROJECTS'),
+          const PageTitle(title: 'PROJECTS', isMobile: true,),
           Container(
             margin: const EdgeInsets.only(left: 32, right: 32),
             constraints: const BoxConstraints(maxWidth: 700,),

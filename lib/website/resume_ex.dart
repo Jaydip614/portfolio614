@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles/web_page_title.dart';
+import '../styles/page_title.dart';
 
 class WebResume1 extends StatefulWidget {
   const WebResume1({super.key});
@@ -19,7 +19,7 @@ class _WebResume1State extends State<WebResume1> {
 
     return Column(
           children: [
-            const WebPageTitle(title: 'RESUME'),
+            const PageTitle(title: 'RESUME', isMobile: false,),
             Container(
                 // duration: const Duration(milliseconds: 900),
                 constraints: BoxConstraints(

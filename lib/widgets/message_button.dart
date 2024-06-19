@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../styles/mycolors.dart';
 
 class MessageMeButton extends StatelessWidget {
   const MessageMeButton({super.key,});
@@ -15,10 +16,10 @@ class MessageMeButton extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 25,right: 25),
             child: FloatingActionButton(
                     onPressed: () {},
-                    backgroundColor: const Color(0xFF8E05C2),
+                    backgroundColor: MyColors.purple,
                     child: const Icon(
                       Icons.message,
-                      color: Colors.white,),
+                      color: MyColors.white,),
             ),
           ),
         ],

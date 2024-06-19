@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/resume_data.dart';
 import 'package:jaydipbaraiya/widgets/custom_timeline.dart';
+import '../styles/page_title.dart';
 import 'dart:js' as js;
-
-import '../styles/mobile_page_title.dart';
 
 class MobileResume extends StatelessWidget {
   const MobileResume({super.key});
@@ -12,7 +11,7 @@ class MobileResume extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const MobilePageTitle(title: 'RESUME'),
+        const PageTitle(title: 'RESUME', isMobile: true,),
         Padding(
           padding: const EdgeInsets.only(left: 32, right: 32),
           child: ConstrainedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/resume_data.dart';
+import '../constants/resume_data.dart';
+import '../styles/mycolors.dart';
 import 'package:jaydipbaraiya/widgets/education_card.dart';
 import 'package:timelines/timelines.dart';
 
@@ -21,11 +22,11 @@ class CustomTimeline extends StatelessWidget {
           node: TimelineNode(
             indicator: OutlinedDotIndicator(
               size: isMobile == false ? 20 : 17,
-              color: const Color(0xFF8E05C2),
+              color: MyColors.purple,
             ),
             indicatorPosition: 0.0,
             endConnector: const SolidLineConnector(
-              color: Color(0xFF8E05C2),
+              color: MyColors.purple,
             ),
           ),
           contents: isMobile == false ? WebEducationCard(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/home_data.dart';
-import 'package:jaydipbaraiya/styles/textstyles.dart';
+import '../styles/mycolors.dart';
+import '../constants/home_data.dart';
+import '../styles/textstyles.dart';
+import '../widgets/rectangle_button.dart';
 
 class WebHomeScreen extends StatelessWidget {
   const WebHomeScreen({
@@ -28,7 +30,7 @@ class WebHomeScreen extends StatelessWidget {
           padding: EdgeInsets.only(
             left: screenWidth * 0.1,
             right: screenWidth * 0.1,
-            top: 50,
+            top: 20,
           ),
           child: SizedBox(
               height: screenHeight,
@@ -36,51 +38,35 @@ class WebHomeScreen extends StatelessWidget {
                 children: [
                   ConstrainedBox(
                     constraints: const BoxConstraints(
-                        maxWidth: 650,
+                        maxWidth: 675,
                     ),
                     child: Container(
                       margin: const EdgeInsets.only(left: 75),
                       width: screenWidth / 2,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(title,
-                            style: textStyleBold(
+                            style: titleTextStyle(
                               fontSize: 52,
-                            )
+                            ),
                           ),
                           const SizedBox(height: 15,),
                           Text(subTitle,
-                            style: textStylePrimary(
+                            style: regularTextStyle(
                               fontSize: 21,
-                              color: Colors.black87
+                              color: MyColors.black87
                             ),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 50,),
-                           FilledButton(
-                                onPressed: (){
-                                  onButtonTap(4);
-                                },
-                                style: FilledButton.styleFrom(
-                                    backgroundColor: const Color(0xFF8E05C2),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5),
-                                    ),
-                                ),
-                                child: const Padding(
-                                  padding: EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
-                                  child: Text('PROJECTS',
-                                    style: TextStyle(
-                                      fontSize: 21,
-                                      fontFamily: 'SourceSans3-Regular',
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                          const SizedBox(height: 50,),
+                          RectangleButton(
+                            onPressed: () {
+                              onButtonTap(4);
+                            },
+                            isMobile: false,
+                            text: 'PROJECTS',
+                           ),
                         ],
                       ),
                     ),

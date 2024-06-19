@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
 
-import '../styles/web_page_title.dart';
+import '../styles/page_title.dart';
 
 class WebAchievements extends StatelessWidget {
   const WebAchievements({super.key});
@@ -11,7 +11,7 @@ class WebAchievements extends StatelessWidget {
 
     return Column(
       children: [
-        const WebPageTitle(title: 'ACHIEVEMENTS'),
+        const PageTitle(title: 'ACHIEVEMENTS', isMobile: false,),
         const SizedBox(height: 10,),
         Container(
           constraints: const BoxConstraints(

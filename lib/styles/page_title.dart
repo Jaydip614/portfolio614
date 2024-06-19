@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/styles/textstyles.dart';
 
-class WebPageTitle extends StatelessWidget {
-  const WebPageTitle({
+class PageTitle extends StatelessWidget {
+  const PageTitle({
     super.key,
     required this.title,
+    required this.isMobile,
   });
 
   final String title;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 50,),
+        SizedBox(height: isMobile == true ? 30 : 50,),
         Text(title,
-          style: textStyleBold(
-            fontSize: 36
+          style: titleTextStyle(
+            fontSize: isMobile == true ? 27 : 36,
           ),
         ),
-        const SizedBox(height: 12,),
+        SizedBox(height: isMobile == true ? 10 : 12,),
         Container(
-          width: 45,
+          width: isMobile == true ? 35 : 45,
           height: 5,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(3),
             color: const Color(0xFF8E05C2),
           ),
         ),
-        const SizedBox(height: 20,),
+        SizedBox(height: isMobile == true ? 16 : 20,),
       ],
     );
   }

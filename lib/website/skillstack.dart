@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/skills_data.dart';
-import 'package:jaydipbaraiya/styles/web_page_title.dart';
+import 'package:jaydipbaraiya/styles/page_title.dart';
 
 class WebSkillStack extends StatelessWidget {
   const WebSkillStack({super.key});
@@ -12,7 +12,7 @@ class WebSkillStack extends StatelessWidget {
 
     return Column(
             children: [
-              const WebPageTitle(title: 'SKILL STACK'),
+              const PageTitle(title: 'SKILL STACK', isMobile: false,),
               const SizedBox(height: 10,),
               Container(
                 constraints: BoxConstraints(

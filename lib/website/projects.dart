@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/projects_data.dart';
-import '../styles/web_page_title.dart';
+import '../styles/page_title.dart';
 
 class WebProjects extends StatelessWidget {
   const WebProjects({super.key});
@@ -11,7 +11,7 @@ class WebProjects extends StatelessWidget {
       color: Colors.white,
       child: Column(
           children: [
-            const WebPageTitle(title: 'PROJECTS'),
+            const PageTitle(title: 'PROJECTS', isMobile: false,),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700,),
               child: const Text('I have worked with different projects and I am displaying some of them here.',

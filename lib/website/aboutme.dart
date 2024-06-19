@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
-import 'package:jaydipbaraiya/styles/web_page_title.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
+import 'package:jaydipbaraiya/styles/page_subtitle.dart';
+import 'package:jaydipbaraiya/styles/page_title.dart';
 import '../widgets/social_card.dart';
 
 class WebAboutMe extends StatelessWidget {
@@ -13,18 +15,8 @@ class WebAboutMe extends StatelessWidget {
 
     return Column(
           children: [
-            const WebPageTitle(title: 'ABOUT'),
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 700,),
-              child: Text(subTitle,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'SourceSans3-Regular',
-                  color: Colors.black54,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            const PageTitle(title: 'ABOUT', isMobile: false,),
+            PageSubTitle(subTitle: subTitle, isMobile: false,),
             const SizedBox(height: 30,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

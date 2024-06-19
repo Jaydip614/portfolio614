@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../styles/mycolors.dart';
+import '../styles/textstyles.dart';
 
 class WebEducationCard extends StatelessWidget {
   const WebEducationCard({
@@ -24,43 +26,30 @@ class WebEducationCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(degree,
-            style: const TextStyle(
-                fontSize: 21,
-                fontFamily: 'SourceSans3-Bold',
-                fontWeight: FontWeight.bold,
-                color: Colors.black
-            ),
+            style: boldTextStyle(),
           ),
           const SizedBox(height: 5,),
           Container(
-            color: const Color(0xFFE4EDF9),
+            color: MyColors.whiteYear,
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 7, bottom: 7),
               child: Text(year,
-                style: const TextStyle(
-                    fontSize: 17,
-                    fontFamily: 'SourceSans3-Regular',
-                    fontStyle: FontStyle.italic,
-                    color: Colors.black
+                style: regularItalicTextStyle(
+                  fontSize: 17,
                 ),
               ),
             ),
           ),
           const SizedBox(height: 10,),
           Text(school,
-            style: const TextStyle(
-                fontSize: 18,
-                fontFamily: 'SourceSans3-Regular',
-                fontStyle: FontStyle.italic,
-                color: Colors.black
+            style: regularItalicTextStyle(
+              fontSize: 18,
             ),
           ),
           const SizedBox(height: 15.0,),
           Text(description,
-            style: const TextStyle(
-                fontSize: 18,
-                fontFamily: 'SourceSans3-Regular',
-                color: Colors.black
+            style: regularTextStyle(
+              fontSize: 18,
             ),
             textAlign: TextAlign.justify,
           ),
@@ -94,43 +83,32 @@ class MobileEducationCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(degree,
-            style: const TextStyle(
-                fontSize: 18,
-                fontFamily: 'SourceSans3-Bold',
-                fontWeight: FontWeight.bold,
-                color: Colors.black
+            style: boldTextStyle(
+              fontSize: 18,
             ),
           ),
           const SizedBox(height: 5,),
           Container(
-            color: const Color(0xFFE4EDF9),
+            color: MyColors.whiteYear,
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 7, bottom: 7),
               child: Text(year,
-                style: const TextStyle(
-                    fontSize: 15,
-                    fontFamily: 'SourceSans3-Regular',
-                    fontStyle: FontStyle.italic,
-                    color: Colors.black
+                style: regularItalicTextStyle(
+                  fontSize: 15,
                 ),
               ),
             ),
           ),
           const SizedBox(height: 10,),
           Text(school,
-            style: const TextStyle(
-                fontSize: 18,
-                fontFamily: 'SourceSans3-Regular',
-                fontStyle: FontStyle.italic,
-                color: Colors.black
+            style: regularItalicTextStyle(
+              fontSize: 18,
             ),
           ),
           const SizedBox(height: 15.0,),
           Text(description,
-            style: const TextStyle(
-                fontSize: 17,
-                fontFamily: 'SourceSans3-Regular',
-                color: Colors.black
+            style: regularTextStyle(
+              fontSize: 17
             ),
             textAlign: TextAlign.justify,
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../styles/mobile_page_title.dart';
+import '../styles/page_title.dart';
 
 class MobileContactMe extends StatelessWidget {
   const MobileContactMe({super.key});
@@ -24,7 +23,7 @@ class MobileContactMe extends StatelessWidget {
           width: screenWidth,
           child: Column(
             children: [
-              const MobilePageTitle(title: 'CONTACT'),
+              const PageTitle(title: 'CONTACT', isMobile: true,),
               Container(
                 margin: const EdgeInsets.only(left: 32, right: 32),
                 constraints: const BoxConstraints(maxWidth: 700,),

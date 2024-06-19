@@ -15,11 +15,10 @@ class MobileMenu extends StatelessWidget {
         children: [
           IconButton(
             onPressed: onMenuTap,
-            style: IconButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              // backgroundColor: const Color(0xFFF2F3F5),
+            icon: const Icon(
+              Icons.menu_rounded,
+              size: 30,
             ),
-            icon: const Icon(Icons.menu_rounded, size: 30,),
           )
         ],
       ),

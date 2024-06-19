@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/home_data.dart';
+import '../styles/mycolors.dart';
+import '../constants/home_data.dart';
+import '../styles/textstyles.dart';
+import '../widgets/rectangle_button.dart';
 
 class MobileHomeScreen extends StatelessWidget {
   const MobileHomeScreen({
@@ -33,44 +36,26 @@ class MobileHomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30,),
               Text(title,
-                style: const TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'SourceSans3-Bold',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black
+                style: boldTextStyle(
+                  fontSize: 32,
                 ),
               ),
               const SizedBox(height: 10,),
               Text(subTitleMobile,
-                style: const TextStyle(
+                style: regularTextStyle(
                   fontSize: 17.5,
-                  fontFamily: 'SourceSans3-Regular',
-                  color: Colors.black87,
+                  color: MyColors.black87
                 ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 50,),
-              FilledButton(
-                  onPressed: (){
-                    onButtonTap(4);
-                  },
-                  style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFF8E05C2),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)
-                    )
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
-                    child: Text('Projects',
-                      style: TextStyle(
-                        fontSize: 21,
-                        fontFamily: 'SourceSans3-Regular',
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-              )
+              RectangleButton(
+                onPressed: () {
+                  onButtonTap(4);
+                },
+                isMobile: true,
+                text: 'Projects',
+              ),
             ],
           ),
         )

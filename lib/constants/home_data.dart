@@ -1,7 +1,7 @@
 
 String title = "HEY, I'M JAYDIP BARAIYA";
 
-String subTitle = 'Flutter Developer: Transforming ideas into interactive Application for seamless user experiences...';
+String subTitle = 'Flutter Developer: Transforming ideas into interactive \nApplication for seamless user experiences...';
 
 String subTitleMobile = 'Flutter Developer, Transforming ideas into'
     '\ninteractive Application for seamless user'

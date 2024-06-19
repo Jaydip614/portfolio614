@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/achievements_data.dart';
-
-import '../styles/mobile_page_title.dart';
+import '../styles/page_title.dart';
 
 class MobileAchievements extends StatelessWidget {
   const MobileAchievements({super.key});
@@ -11,7 +10,7 @@ class MobileAchievements extends StatelessWidget {
 
     return Column(
       children: [
-        const MobilePageTitle(title: 'ACHIEVEMENTS'),
+        const PageTitle(title: 'ACHIEVEMENTS', isMobile: true,),
         const SizedBox(height: 10,),
         Container(
           constraints: const BoxConstraints(

@@ -35,9 +35,12 @@ flutter:
       fonts:
         - asset: assets/fonts/SourceSans3-Bold.ttf
 
+    - family: SourceSans3-Medium
+      fonts:
+        - asset: assets/fonts/SourceSans3-Medium.ttf
+
     - family: SourceSans3-Regular
       fonts:
         - asset: assets/fonts/SourceSans3-Regular.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
 

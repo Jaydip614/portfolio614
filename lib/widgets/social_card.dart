@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jaydipbaraiya/styles/mycolors.dart';
 import "dart:js" as js;
 
 class SocialCard extends StatefulWidget {
@@ -21,7 +22,7 @@ class SocialCard extends StatefulWidget {
 
 class _SocialCardState extends State<SocialCard> {
 
-  Color shadowColor = Colors.black26;
+  Color shadowColor = MyColors.black12;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,6 @@ class _SocialCardState extends State<SocialCard> {
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            // color: Colors.black,
             boxShadow: [
               BoxShadow(
                 color: shadowColor,
@@ -48,12 +48,12 @@ class _SocialCardState extends State<SocialCard> {
           child: MouseRegion(
             onEnter: (PointerEvent details) {
               setState(() {
-                shadowColor = shadowColor == Colors.black26 ? Colors.purple : Colors.black26;
+                shadowColor = shadowColor == MyColors.black12 ? MyColors.purple : MyColors.black12;
               });
             },
             onExit: (PointerEvent details) {
               setState(() {
-                shadowColor = shadowColor == Colors.black26 ? Colors.purple : Colors.black26;
+                shadowColor = shadowColor == MyColors.black12 ? MyColors.purple : MyColors.black12;
               });
             },
             child: Image.asset(widget.image),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../styles/textstyles.dart';
+import '../styles/mycolors.dart';
 
 class NavButton extends StatefulWidget {
   const NavButton({
@@ -22,8 +24,8 @@ class _NavButtonState extends State<NavButton> {
 
   double _width = 56;
   bool _isHover = false;
-  Color _backColor = const Color(0xFFF1F2F5);
-  Color _iconColor = Colors.black;
+  Color _backColor = MyColors.white01;
+  Color _iconColor = MyColors.black;
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +36,16 @@ class _NavButtonState extends State<NavButton> {
             setState(() {
               _width = _width == 56 ? widget.toolTipWidth : 56;
               _isHover = true;
-              _backColor = const Color(0xFF8E05C2);
-              _iconColor = Colors.white;
+              _backColor = MyColors.purple;
+              _iconColor = MyColors.white;
             });
           },
           onExit: (event) {
             setState(() {
               _width = _width == 56 ? widget.toolTipWidth : 56;
               _isHover = false;
-              _backColor = const Color(0xFFF1F2F5);
-              _iconColor = Colors.black;
+              _backColor = MyColors.white01;
+              _iconColor = MyColors.black;
             });
           },
           child: Stack(
@@ -53,17 +55,16 @@ class _NavButtonState extends State<NavButton> {
                 width: _width,
                 height: 56,
                 decoration: BoxDecoration(
-                  color: widget.isSelected ? const Color(0xFF8E05C2) : _backColor,
+                  color: widget.isSelected ? MyColors.purple : _backColor,
                   borderRadius: BorderRadius.circular(28),
                 ),
                 child: _isHover == true ? Padding(
                   padding: const EdgeInsets.only(left: 56,top: 16,bottom: 19, right: 12),
                   child: Text(widget.toolTip,
-                    style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'SourceSans3-Regular',
-                    color: _iconColor,
-                  ),
+                    style: regularTextStyle(
+                      fontSize: 18,
+                      color: _iconColor,
+                    ),
                   ),
                 ) : null,
               ),
@@ -73,11 +74,11 @@ class _NavButtonState extends State<NavButton> {
                   child: Icon(
                     widget.icon,
                     size: 25,
-                    color: widget.isSelected ? Colors.white : _iconColor,
+                    color: widget.isSelected ? MyColors.white : _iconColor,
                   ),
               ),
             ],
-          )
+          ),
         ),
     );
   }

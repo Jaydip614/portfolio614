@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../styles/mycolors.dart';
+import '../styles/textstyles.dart';
 import '../constants/navbar_data.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -11,7 +13,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: const Color(0xFFF2F3F5),
+      backgroundColor: MyColors.white01,
       child: ListView(
         children: [
           Padding(
@@ -23,27 +25,22 @@ class CustomDrawer extends StatelessWidget {
                   height: 60,
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.black12,
+                      color: MyColors.black54,
                   ),
-                  child: Image.asset("assets/images/profile614.png", fit: BoxFit.fill,),
+                  child: Image.asset("assets/images/profile614.png",
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 const SizedBox(width: 12,),
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Jaydip Baraiya",
-                      style: TextStyle(
-                          fontSize: 21,
-                          fontFamily: "SourceSans3-Bold",
-                          color: Colors.black,
-                      ),
+                      style: boldTextStyle(),
                     ),
                     Text(" jaydipbaraiya614@gmail.com",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: "SourceSans3-Regular",
-                          // fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                      style: regularTextStyle(
+                          fontSize: 14.5,
                       ),
                     ),
                   ],
@@ -60,12 +57,9 @@ class CustomDrawer extends StatelessWidget {
               contentPadding: const EdgeInsets.only(left: 20),
               leading: Icon(navIcons[i], size: 25,),
               title: Text(navTitles[i]),
-              iconColor: Colors.black54,
-              titleTextStyle: const TextStyle(
-                  fontSize: 17,
-                  fontFamily: "SourceSans3-Regular",
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
+              iconColor: MyColors.black54,
+              titleTextStyle: regularTextStyle(
+                fontSize: 17,
               ),
             ),
         ],
