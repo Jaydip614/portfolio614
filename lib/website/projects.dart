@@ -4,6 +4,7 @@ import '../constants/projects_data.dart';
 import '../styles/mycolors.dart';
 import '../widgets/page_subtitle.dart';
 import '../widgets/page_title.dart';
+import 'dart:js' as js;
 
 class WebProjects extends StatelessWidget {
   const WebProjects({super.key});
@@ -32,6 +33,8 @@ class WebProjects extends StatelessWidget {
                     isWebLink: projects[i]['isWebLink'],
                     description: projects[i]['description'],
                     tools: projects[i]['tools'],
+                    webLink: projects[i]['webLink'],
+                    githubLink: projects[i]['githubLink'],
                   ),
                 ],
               ),
@@ -52,6 +55,8 @@ class WebProjects extends StatelessWidget {
                       isWebLink: projects[i]['isWebLink'],
                       description: projects[i]['description'],
                       tools: projects[i]['tools'],
+                      webLink: projects[i]['webLink'],
+                      githubLink: projects[i]['githubLink'],
                     ),
                 ],
               ),
@@ -63,7 +68,7 @@ class WebProjects extends StatelessWidget {
   }
 }
 
-class ProjectCard extends StatelessWidget {
+class ProjectCard extends StatefulWidget {
 
   final String image;
 
@@ -75,6 +80,8 @@ class ProjectCard extends StatelessWidget {
     required this.projectType,
     required this.isGithubLink,
     required this.isWebLink,
+    required this.webLink,
+    required this.githubLink,
     });
 
   final String projectName;
@@ -83,6 +90,16 @@ class ProjectCard extends StatelessWidget {
   final bool isWebLink;
   final String description;
   final List<String> tools;
+  final String webLink;
+  final String githubLink;
+
+  @override
+  State<ProjectCard> createState() => _ProjectCardState();
+}
+
+class _ProjectCardState extends State<ProjectCard> {
+
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -90,75 +107,89 @@ class ProjectCard extends StatelessWidget {
       padding: const EdgeInsets.only(right: 20),
       child: Stack(
           children: [
-            Container(
-                width: 500,
-                height: 320,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: MyColors.white01,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: MyColors.black12,
-                      blurRadius: 7,
-                      offset: Offset(0, 5),
-                    ),
-                  ]
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(30),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          TopSection(
-                            image: image,
-                            projectName: projectName,
-                            projectType: projectType,
-                            isGithubLink: isGithubLink,
-                            isWebLink: isWebLink,
-                          ),
-                          const SizedBox(height: 25,),
-                          Text(description,
-                            style: regularTextStyle(
-                              fontSize: 17,
-                            ),
-                            textAlign: TextAlign.justify,
-                          ),
-                        ],
+            MouseRegion(
+              onEnter: (event) {
+                setState(() {
+                  isHovered = true;
+                });
+              },
+              onExit: (event) {
+                setState(() {
+                  isHovered = false;
+                });
+              },
+              child: Container(
+                  width: 500,
+                  height: 320,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: MyColors.white01,
+                    boxShadow: [
+                      BoxShadow(
+                        color: isHovered == true ? MyColors.purple.withOpacity(0.5) : MyColors.black12,
+                        blurRadius: 7,
+                        offset: const Offset(0, 5),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Wrap(
-                            children: [
-                              for(int i=0; i<tools.length; i++)
-                                CustomBox(toolName: tools[i]),
-                            ],
-                          ),
-                          // FilledButton(
-                          //   onPressed: (){},
-                          //   style: FilledButton.styleFrom(
-                          //       backgroundColor: MyColors.purple,
-                          //       shape: RoundedRectangleBorder(
-                          //           borderRadius: BorderRadius.circular(5)
-                          //       )
-                          //   ),
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
-                          //     child: Text('View',
-                          //       style: regularTextStyle(
-                          //         fontSize: 17,
-                          //         color: MyColors.white,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
-                        ],
-                      )
-                    ],
+                    ]
                   ),
-                ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            TopSection(
+                              image: widget.image,
+                              projectName: widget.projectName,
+                              projectType: widget.projectType,
+                              isGithubLink: widget.isGithubLink,
+                              isWebLink: widget.isWebLink,
+                              webLink: widget.webLink,
+                              githubLink: widget.githubLink,
+                            ),
+                            const SizedBox(height: 25,),
+                            Text(widget.description,
+                              style: regularTextStyle(
+                                fontSize: 17,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Wrap(
+                              children: [
+                                for(int i=0; i<widget.tools.length; i++)
+                                  CustomBox(toolName: widget.tools[i]),
+                              ],
+                            ),
+                            // FilledButton(
+                            //   onPressed: (){},
+                            //   style: FilledButton.styleFrom(
+                            //       backgroundColor: MyColors.purple,
+                            //       shape: RoundedRectangleBorder(
+                            //           borderRadius: BorderRadius.circular(5)
+                            //       )
+                            //   ),
+                            //   child: Padding(
+                            //     padding: const EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
+                            //     child: Text('View',
+                            //       style: regularTextStyle(
+                            //         fontSize: 17,
+                            //         color: MyColors.white,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+              ),
             ),
           ],
         ),
@@ -174,6 +205,8 @@ class TopSection extends StatelessWidget {
     required this.projectType,
     required this.isGithubLink,
     required this.isWebLink,
+    required this.webLink,
+    required this.githubLink,
   });
 
   final String image;
@@ -181,6 +214,8 @@ class TopSection extends StatelessWidget {
   final String projectType;
   final bool isGithubLink;
   final bool isWebLink;
+  final String webLink;
+  final String githubLink;
 
   @override
   Widget build(BuildContext context) {
@@ -221,54 +256,9 @@ class TopSection extends StatelessWidget {
         Row(
           children: [
             if(isWebLink == true)
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: MyColors.white,
-                  border: Border.all(
-                    width: 1,
-                    color: MyColors.black12
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: MyColors.black12,
-                      blurRadius: 2,
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Image.asset('assets/images/web-black-logo.png',),
-                ),
-              ),
+              ProjectLink(image: 'assets/images/web-black-logo.png', link: webLink),
             if(isGithubLink == true)
-            Padding(
-              padding: const EdgeInsets.only(left: 12.0),
-              child: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: MyColors.white,
-                  border: Border.all(
-                      width: 1,
-                      color: MyColors.black12
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: MyColors.black12,
-                      blurRadius: 2,
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Image.asset('assets/images/github.png',),
-                ),
-              ),
-            ),
+              ProjectLink(image: 'assets/images/github.png', link: githubLink)
           ],
         )
       ],
@@ -300,6 +290,51 @@ class CustomBox extends StatelessWidget {
             fontSize: 15,
             fontFamily: 'SourceSans3-Regular',
             color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ProjectLink extends StatelessWidget {
+  const ProjectLink({
+    super.key,
+    required this.image,
+    required this.link,
+  });
+
+  final String image;
+  final String link;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10),
+      child: InkWell(
+        onTap: () {
+          js.context.callMethod('open', [link]);
+        },
+        child: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: MyColors.white,
+            border: Border.all(
+                width: 1,
+                color: MyColors.black12
+            ),
+            boxShadow: const [
+              BoxShadow(
+                color: MyColors.black12,
+                blurRadius: 2,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Image.asset(image),
           ),
         ),
       ),

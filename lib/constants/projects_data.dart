@@ -8,6 +8,8 @@ List<Map> projects = [
     'projectType': 'UI Design',
     'isGithubLink': false,
     'isWebLink': true,
+    'githubLink' : '',
+    'webLink' : '',
     'description': "Turn hand gestures into creative AI interactions: "
         "To help customer at affordable price without any commission to explore heritage of India",
     'tools': ['Figma', 'UI/UX'],
@@ -18,6 +20,8 @@ List<Map> projects = [
     'projectType': 'Android Application',
     'isGithubLink': true,
     'isWebLink': false,
+    'githubLink' : '',
+    'webLink' : '',
     'description': "Turn hand gestures into creative AI interactions: "
         "Draw, erase, and watch as AI interprets your sketches in real-time"
         "To help customer at affordable price without any commission to explore heritage of India",
@@ -29,6 +33,8 @@ List<Map> projects = [
     'projectType': 'Web Application',
     'isGithubLink': true,
     'isWebLink': false,
+    'githubLink' : '',
+    'webLink' : '',
     'description': "Turn hand gestures into creative AI interactions: "
         "Draw, erase, and watch as AI interprets your sketches in real-time"
         "To help customer at affordable price without any commission to explore heritage of India",
@@ -40,6 +46,8 @@ List<Map> projects = [
     'projectType': 'Website',
     'isGithubLink': true,
     'isWebLink': true,
+    'githubLink' : '',
+    'webLink' : '',
     'description': "Turn hand gestures into creative AI interactions: "
         "Draw, erase, and watch as AI interprets your sketches in real-time",
     'tools': ['HTML', 'CSS', 'JavaScript',],

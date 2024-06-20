@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/skills_data.dart';
+import 'package:jaydipbaraiya/styles/mycolors.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
+import '../constants/skills_data.dart';
 import '../widgets/page_title.dart';
 
 class WebSkillStack extends StatelessWidget {
@@ -12,14 +14,14 @@ class WebSkillStack extends StatelessWidget {
 
     return Column(
             children: [
-              const PageTitle(title: 'SKILL STACK', isMobile: false,),
+              const PageTitle(title: 'SKILLS', isMobile: false,),
               const SizedBox(height: 10,),
               Container(
                 constraints: BoxConstraints(
                   maxWidth: screenWidth / 1.35,
                 ),
                 decoration: BoxDecoration(
-                    color: const Color(0xFFF2F3F5),
+                    color: MyColors.white01,
                     borderRadius: BorderRadius.circular(20)
                 ),
                 child: Padding(
@@ -29,11 +31,9 @@ class WebSkillStack extends StatelessWidget {
                     children: [
         
                       //Tech Skills
-                      const Text('Technical Skills',
-                        style: TextStyle(
+                      Text('Technical Skills',
+                        style: boldTextStyle(
                           fontSize: 20,
-                          fontFamily: 'SourceSans3-Bold',
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(height: 30,),
@@ -47,11 +47,9 @@ class WebSkillStack extends StatelessWidget {
                       const SizedBox(height: 40,),
         
                       //Soft Skills
-                      const Text('Soft Skills',
-                        style: TextStyle(
+                      Text('Soft Skills',
+                        style: boldTextStyle(
                           fontSize: 20,
-                          fontFamily: 'SourceSans3-Bold',
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(height: 30,),
@@ -76,11 +74,9 @@ class WebSkillStack extends StatelessWidget {
                   padding: const EdgeInsets.all(30),
                   child: Column(
                     children: [
-                      const Text('Tools',
-                          style: TextStyle(
+                      Text('Tools',
+                          style: boldTextStyle(
                             fontSize: 25,
-                            fontFamily: 'SourceSans3-Bold',
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       const SizedBox(height: 5,),
@@ -89,7 +85,7 @@ class WebSkillStack extends StatelessWidget {
                           width: 40,
                           height: 3,
                           decoration: BoxDecoration(
-                              color: const Color(0xFF8E05C2),
+                              color: MyColors.purple,
                               borderRadius: BorderRadius.circular(2)
                           ),
                         ),
@@ -125,7 +121,7 @@ class CustomBox extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 20),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: MyColors.white,
           borderRadius: BorderRadius.circular(7)
       ),
       child: Padding(
@@ -152,7 +148,8 @@ class CustomCard extends StatelessWidget {
   const CustomCard({super.key,
     required this.image,
     required this.toolName,
-    required this.shadowColor});
+    required this.shadowColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -165,9 +162,8 @@ class CustomCard extends StatelessWidget {
           width: 229,
           height: 270,
           decoration: BoxDecoration(
-            // boxShadow: [ BoxShadow( blurRadius: 2, color: themeColor,)],
               borderRadius: BorderRadius.circular(10),
-              color: Colors.white
+              color: MyColors.white
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -177,7 +173,7 @@ class CustomCard extends StatelessWidget {
                   height: 130,
                   child: Image.asset(image)
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 25,),
               Text(toolName,
                 style: const TextStyle(
                   fontSize: 17,
