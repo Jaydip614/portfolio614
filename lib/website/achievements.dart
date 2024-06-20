@@ -155,6 +155,7 @@ class _AchievementCardState extends State<AchievementCard> {
                         },
                         icon: const Icon(
                           Icons.link_outlined,
+                          size: 25,
                           color: MyColors.black54,
                         ),
                       ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jaydipbaraiya/widgets/rectangle_button.dart';
 import '../constants/contactme_data.dart';
+import '../styles/mycolors.dart';
 import '../widgets/page_subtitle.dart';
 import '../widgets/page_title.dart';
 
@@ -32,116 +34,37 @@ class MobileContactMe extends StatelessWidget {
                 width: 600,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFFF2F3F5),
+                  color: MyColors.white01,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 25, right: 25, top: 50, bottom: 25),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Your Name',
-                            filled: true,
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                            fillColor: Colors.white,
-                            hoverColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
+                      const CustomTextField(
+                          hintText: 'Your Name',
+                          maxLines: 1,
                           ),
-                        ),
+                      const CustomTextField(
+                        hintText: 'Your Email',
+                        maxLines: 1,
                       ),
-                      const SizedBox(height: 30,),
-                      SizedBox(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Your Email',
-                            filled: true,
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                            fillColor: Colors.white,
-                            hoverColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                          ),
-                        ),
+                      const CustomTextField(
+                        hintText: 'Subject',
+                        maxLines: 1,
                       ),
-                      const SizedBox(height: 30,),
-                      SizedBox(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Subject',
-                            filled: true,
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                            fillColor: Colors.white,
-                            hoverColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                          ),
-                        ),
+                      const CustomTextField(
+                        hintText: 'Your Name',
+                        maxLines: 8,
                       ),
-                      const SizedBox(height: 30,),
-                      SizedBox(
-                        width: 800,
-                        child: TextField(
-                          maxLines: 10,
-                          decoration: InputDecoration(
-                            hintText: 'Message',
-                            filled: true,
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                            fillColor: Colors.white,
-                            hoverColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(7),
-                                borderSide: BorderSide.none
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 35,),
+                      const SizedBox(height: 5,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          FilledButton(
-                            onPressed: (){},
-                            style: FilledButton.styleFrom(
-                              backgroundColor: const Color(0xFF8E05C2),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
-                              child: Text('SUBMIT',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontFamily: 'SourceSans3-Bold',
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
+                          RectangleButton(
+                              onPressed: () {},
+                              text: 'SUBMIT',
+                              isMobile: false,
                           ),
                         ],
                       ),
@@ -154,6 +77,42 @@ class MobileContactMe extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
+    super.key,
+    required this.hintText,
+    required this.maxLines,
+  });
+
+  final String hintText;
+  final int maxLines;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: TextField(
+          maxLines: maxLines,
+          decoration: InputDecoration(
+            hintText: hintText,
+            filled: true,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+            fillColor: MyColors.white,
+            hoverColor: MyColors.white,
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7),
+                borderSide: BorderSide.none
+            ),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7),
+                borderSide: BorderSide.none
+            ),
+          ),
+        ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/constants/aboutme_data.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
 import '../widgets/page_subtitle.dart';
 import '../widgets/page_title.dart';
 import '../widgets/social_card.dart';
@@ -20,7 +21,7 @@ class MobileAboutMe extends StatelessWidget {
           height: 250,
           child: Image.asset(myImage),
         ),
-        const SizedBox(height: 30,),
+        const SizedBox(height: 45,),
         SizedBox(
               width: 270,
               child: Column(
@@ -28,7 +29,7 @@ class MobileAboutMe extends StatelessWidget {
                     children: [
                       for(int i=0; i<myInfo.length; i++)
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 15),
+                        padding: const EdgeInsets.only(bottom: 15,),
                         child: Row(
                           children: [
                             Icon(myInfo[i]['icon'],
@@ -36,9 +37,8 @@ class MobileAboutMe extends StatelessWidget {
                             ),
                             const SizedBox(width: 13,),
                             Text(myInfo[i]['data'],
-                              style: const TextStyle(
+                              style: regularTextStyle(
                                 fontSize: 17,
-                                fontFamily: 'SourceSans3-Regular',
                               ),
                             ),
                           ],
@@ -48,11 +48,9 @@ class MobileAboutMe extends StatelessWidget {
                   ),
             ),
         const SizedBox(height: 30,),
-        const Text('Get to know me!',
-            style: TextStyle(
-                fontFamily: 'SourceSans3-Bold',
-                fontWeight: FontWeight.bold,
-                fontSize: 21
+        Text('Get to know me!',
+            style: boldTextStyle(
+              fontSize: 22,
             ),
           ),
         const SizedBox(height: 20,),
@@ -63,10 +61,8 @@ class MobileAboutMe extends StatelessWidget {
             maxWidth: 700,
           ),
           child: Text(paragraphs[i],
-            style: const TextStyle(
-              fontSize: 17,
-              fontFamily: 'SourceSans3-Regular',
-              color: Colors.black87,
+            style: regularTextStyle(
+              fontSize: 18,
             ),
             textAlign: TextAlign.justify,
           ),

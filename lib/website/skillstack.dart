@@ -131,7 +131,7 @@ class CustomBox extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontSize: 17,
               fontFamily: 'SourceSans3-Regular',
-              color: Color(0xFF8E05C2),
+              color: MyColors.purple,
           ),
         ),
       ),

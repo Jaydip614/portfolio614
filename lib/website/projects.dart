@@ -128,7 +128,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       BoxShadow(
                         color: isHovered == true ? MyColors.purple.withOpacity(0.5) : MyColors.black12,
                         blurRadius: 7,
-                        offset: const Offset(0, 5),
+                        offset: const Offset(0, 7),
                       ),
                     ]
                   ),
@@ -153,6 +153,9 @@ class _ProjectCardState extends State<ProjectCard> {
                               style: regularTextStyle(
                                 fontSize: 17,
                               ),
+                              maxLines: 4,
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.justify,
                             ),
                           ],

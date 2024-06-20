@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/constants/skills_data.dart';
+import 'package:jaydipbaraiya/styles/mycolors.dart';
+import 'package:jaydipbaraiya/styles/textstyles.dart';
+import '../constants/skills_data.dart';
 import '../widgets/page_title.dart';
 
 class MobileSkillStack extends StatelessWidget {
@@ -16,7 +18,7 @@ class MobileSkillStack extends StatelessWidget {
         const SizedBox(height: 10,),
         Container(
           width: screenWidth,
-          color: const Color(0xFFF2F3F5),
+          color: MyColors.white01,
           child: Padding(
             padding: const EdgeInsets.only(left: 25, right: 20, top: 30, bottom: 30),
             child: Column(
@@ -24,11 +26,9 @@ class MobileSkillStack extends StatelessWidget {
               children: [
 
                 //Tech Skills
-                const Text('Technical Skills',
-                  style: TextStyle(
+                Text('Technical Skills',
+                  style: boldTextStyle(
                     fontSize: 17,
-                    fontFamily: 'SourceSans3-Bold',
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 30,),
@@ -42,11 +42,9 @@ class MobileSkillStack extends StatelessWidget {
                 const SizedBox(height: 40,),
 
                 //Soft Skills
-                const Text('Soft Skills',
-                  style: TextStyle(
+                Text('Soft Skills',
+                  style: boldTextStyle(
                     fontSize: 17,
-                    fontFamily: 'SourceSans3-Bold',
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 30,),
@@ -66,11 +64,9 @@ class MobileSkillStack extends StatelessWidget {
         //Tools
         Column(
               children: [
-                const Text('Tools',
-                  style: TextStyle(
+                Text('Tools',
+                  style: boldTextStyle(
                     fontSize: 20,
-                    fontFamily: 'SourceSans3-Bold',
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 5,),
@@ -79,7 +75,7 @@ class MobileSkillStack extends StatelessWidget {
                   width: 30,
                   height: 3,
                   decoration: BoxDecoration(
-                      color: const Color(0xFF8E05C2),
+                      color: MyColors.purple,
                       borderRadius: BorderRadius.circular(2)
                   ),
                 ),
@@ -114,7 +110,7 @@ class CustomBox extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: MyColors.white,
           borderRadius: BorderRadius.circular(7)
       ),
       child: Padding(
@@ -124,7 +120,7 @@ class CustomBox extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontSize: 17,
             fontFamily: 'SourceSans3-Regular',
-            color: Color(0xFF8E05C2),
+            color: MyColors.purple,
           ),
         ),
       ),
@@ -167,7 +163,7 @@ class CustomCard extends StatelessWidget {
                   height: 90,
                   child: Image.asset(image)
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 23,),
               Text(toolName,
                 style: const TextStyle(
                   fontSize: 15,
