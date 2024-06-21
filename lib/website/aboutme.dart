@@ -24,22 +24,22 @@ class WebAboutMe extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 50, left: 25),
+                    padding: const EdgeInsets.only(right: 50,left : 50, bottom: 50),
                     child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 275,
-                            height: 275,
-                            child: Image.asset(myImage),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 25, left: 20),
-                            width: 275,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                for(int i=0; i<myInfo.length; i++)
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 275,
+                          height: 275,
+                          child: Image.asset(myImage),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 25,),
+                          width: 275,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              for(int i=0; i<myInfo.length; i++)
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 15),
                                   child: Row(
@@ -54,11 +54,11 @@ class WebAboutMe extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                              ],
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
+                    ),
                   ),
                   Container(
                       constraints: const BoxConstraints(

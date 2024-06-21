@@ -91,7 +91,7 @@ class _AchievementCardState extends State<AchievementCard> {
           boxShadow: [
             BoxShadow(
               color: isHovered == true ? MyColors.purple.withOpacity(0.5) : MyColors.black12,
-              blurRadius: 7,
+              blurRadius: 8,
             )
           ]
         ),

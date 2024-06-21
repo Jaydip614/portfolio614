@@ -8,6 +8,7 @@ String subTitleMobile = 'Here you will find more information about me,'
     '\nterms of programming and technology';
 
 String myImage = 'assets/images/profile-image2.png';
+// String myImage = 'assets/images/myimage.png';
 
 List<Map> myInfo = [
   {
@@ -35,13 +36,13 @@ List<String> paragraphs = [
 
   'I am a passionate Flutter developer dedicated to pushing the boundaries of mobile app development.'
       ' With a strong foundation in both Flutter and Android development, I thrive on turning ideas into polished, '
-      'user-friendly applications that leave a lasting impression.',
-
-  'I am a passionate Flutter developer dedicated to pushing the boundaries of mobile app development.'
-      ' With a strong foundation in both Flutter and Android development, I thrive on turning ideas into polished, '
+      'user-friendly applications that leave a lasting impression.I thrive on turning ideas into polished, '
       'user-friendly applications that leave a lasting impression.I am a passionate Flutter developer dedicated to '
       'pushing the boundaries of mobile app development. With a strong foundation in both Flutter and Android development,'
       ' I thrive on turning ideas into polished, user-friendly applications that leave a lasting impression.',
+
+  "I'm open to Job opportunities where I can contribute, learn and grow."
+      " If you have a good opportunity that matches my skills and experience then don't hesitate to contact me."
 ];
 
 List<Map> socialsData = [

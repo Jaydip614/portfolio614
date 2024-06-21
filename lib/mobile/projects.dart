@@ -103,8 +103,8 @@ class _ProjectCardState extends State<ProjectCard> {
                     boxShadow: [
                       BoxShadow(
                         color: isHovered == true ? MyColors.purple.withOpacity(0.5) : MyColors.black12,
-                        blurRadius: 5,
-                        offset: const Offset(0, 5),
+                        blurRadius: 6,
+                        offset: const Offset(0, 4),
                       ),
                     ]
                 ),

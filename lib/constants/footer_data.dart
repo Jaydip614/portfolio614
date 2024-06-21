@@ -4,6 +4,8 @@ String title = 'JAYDIP BARAIYA';
 String subTitle = "A Frontend focused Web Developer building the Frontend of Websites and "
     "Web Applications that leads to the success of the overall product";
 
+String portfolioLink = '';
+
 List<Map> socialLinks = [
   {
     'image' : 'assets/images/linkedin-white.png',
