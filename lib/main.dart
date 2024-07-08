@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jaydipbaraiya/widgets/received_messages.dart';
 import 'home_page.dart';
 
-void main(){
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyPortfolio());
 }
 

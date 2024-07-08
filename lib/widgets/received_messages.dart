@@ -3,8 +3,14 @@ import 'package:jaydipbaraiya/styles/mycolors.dart';
 import 'package:jaydipbaraiya/styles/textstyles.dart';
 import '../constants/contactme_data.dart';
 
-class ReceivedMessages extends StatelessWidget {
+class ReceivedMessages extends StatefulWidget {
   const ReceivedMessages({super.key});
+
+  @override
+  State<ReceivedMessages> createState() => _ReceivedMessagesState();
+}
+
+class _ReceivedMessagesState extends State<ReceivedMessages> {
 
   @override
   Widget build(BuildContext context) {
@@ -26,43 +32,43 @@ class ReceivedMessages extends StatelessWidget {
           color: MyColors.white,
         ),
       ),
-      body: ListView(
-        children: [
-          for (int i = 0; i < senders.length; i++)
-            Container(
-              color: i % 2 == 0 ? MyColors.white01 : MyColors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10,top: 2),
-                      child: Text(
-                        "${i + 1}.",
-                        style: boldTextStyle(fontSize: 15),
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          buildInfoRow('Name : ', senders[i].name),
-                          const Divider(),
-                          buildInfoRow('Email : ', senders[i].email),
-                          const Divider(),
-                          buildInfoRow('Subject : ', senders[i].subject),
-                          const Divider(),
-                          buildInfoRow('Message : ', senders[i].message),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-        ],
-      ),
+      // body: ListView(
+      //   children: [
+      //     for (int i = 0; i < senders.length; i++)
+      //       Container(
+      //         color: i % 2 == 0 ? MyColors.white01 : MyColors.white,
+      //         child: Padding(
+      //           padding: const EdgeInsets.all(20),
+      //           child: Row(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               Padding(
+      //                 padding: const EdgeInsets.only(right: 10,top: 2),
+      //                 child: Text(
+      //                   "${i + 1}.",
+      //                   style: boldTextStyle(fontSize: 15),
+      //                 ),
+      //               ),
+      //               Expanded(
+      //                 child: Column(
+      //                   crossAxisAlignment: CrossAxisAlignment.start,
+      //                   children: [
+      //                     buildInfoRow('Name : ', senders[i].name),
+      //                     const Divider(),
+      //                     buildInfoRow('Email : ', senders[i].email),
+      //                     const Divider(),
+      //                     buildInfoRow('Subject : ', senders[i].subject),
+      //                     const Divider(),
+      //                     buildInfoRow('Message : ', senders[i].message),
+      //                   ],
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //   ],
+      // ),
     );
   }
 

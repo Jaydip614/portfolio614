@@ -6,6 +6,7 @@ import '../styles/mycolors.dart';
 import '../widgets/page_subtitle.dart';
 import '../widgets/page_title.dart';
 
+
 class WebContactMe extends StatefulWidget {
   const WebContactMe({super.key});
 
@@ -28,20 +29,11 @@ class _WebContactMeState extends State<WebContactMe> {
   bool _isError = false;
   String _message = '';
 
-  void _showMessage() {
+  void _showMessage() async {
 
     setState(() {
       _isError = false;
     });
-
-    senders.add(
-      Sender(
-        name: yourName.text,
-        email: yourEmail.text,
-        subject: subject.text,
-        message: yourMessage.text,
-      ),
-    );
 
     Future.delayed(const Duration(seconds: 1), () {
       setState(() {

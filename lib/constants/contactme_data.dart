@@ -17,9 +17,13 @@ class Sender {
     required this.message,
   });
 
-  void addSenderDetail(String name, String email,String subject, String message) {
-    Sender newSender = Sender(name: name, email: email, message: message, subject: subject);
-    senders.add(newSender);
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'email': email,
+      'subject': subject,
+      'message': message,
+    };
   }
 
   static bool isValidGmail(String email) {
@@ -27,9 +31,6 @@ class Sender {
     final RegExp gmailRegex = RegExp(
         r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
     );
-
     return gmailRegex.hasMatch(email);
   }
 }
-
-List<Sender> senders = [];
