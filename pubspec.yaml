@@ -16,6 +16,7 @@ dependencies:
   timelines: ^0.1.0
   firebase_core: ^3.1.0
   cloud_firestore: ^5.0.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -45,3 +46,14 @@ flutter:
       fonts:
         - asset: assets/fonts/SourceSans3-Regular.ttf
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: "AppIcon"
+  remove_alpha_ios: true
+  image_path: "assets/images/icon3.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/icon3.png"
+    background_color:
+    theme_color:

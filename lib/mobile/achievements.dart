@@ -97,47 +97,49 @@ class _AchievementCardState extends State<AchievementCard> {
         ),
         child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 21, left: 21, right: 21, bottom: 19),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Container(
-                        clipBehavior: Clip.antiAlias,
-                        width: 120,
-                        height: 120,
-                        decoration: const BoxDecoration(
-                          color: MyColors.white01,
-                          shape: BoxShape.circle,
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 21, left: 21, right: 21, bottom: 19),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          clipBehavior: Clip.antiAlias,
+                          width: 120,
+                          height: 120,
+                          decoration: const BoxDecoration(
+                            color: MyColors.white01,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.asset(widget.image, fit: BoxFit.cover,),
                         ),
-                        child: Image.asset(widget.image, fit: BoxFit.cover,),
-                      ),
-                      const SizedBox(height: 17,),
-                      Text(widget.title,
-                        style: boldTextStyle(
-                          fontSize: 17,
+                        const SizedBox(height: 17,),
+                        Text(widget.title,
+                          style: boldTextStyle(
+                            fontSize: 17,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 8,),
-                      Text(widget.description,
-                        style: regularTextStyle(
-                          fontSize: 16,
+                        const SizedBox(height: 8,),
+                        Text(widget.description,
+                          style: regularTextStyle(
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                  Text(widget.time,
-                    style: regularTextStyle(
-                      fontSize: 15,
-                      color: MyColors.black45,
+                      ],
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                    Text(widget.time,
+                      style: regularTextStyle(
+                        fontSize: 15,
+                        color: MyColors.black45,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(

@@ -25,7 +25,7 @@ class WebAchievements extends StatelessWidget {
             spacing: 25,
             runSpacing: 25,
             children: [
-              for(int i=0; i<3; i++)
+              for(int i=0; i<achievements.length; i++)
                 AchievementCard(
                   image: achievements[i]['image'],
                   title: achievements[i]['title'],

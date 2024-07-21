@@ -52,21 +52,16 @@ class Footer extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40,),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 15,
-                        height: 15,
-                        child: Image.asset(copyRightImage),
-                      ),
-                      const SizedBox(height: 3,)
-                    ],
+                  Text('© ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
                   ),
-                  const SizedBox(width: 2,),
-                  const Text('Copyright 2024. All Rights Reserved',
+                  Text('Copyright 2024. All Rights Reserved',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 13,

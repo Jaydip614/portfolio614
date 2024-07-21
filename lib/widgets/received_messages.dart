@@ -1,7 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/styles/mycolors.dart';
 import 'package:jaydipbaraiya/styles/textstyles.dart';
-import '../constants/contactme_data.dart';
 
 class ReceivedMessages extends StatefulWidget {
   const ReceivedMessages({super.key});
@@ -32,43 +32,73 @@ class _ReceivedMessagesState extends State<ReceivedMessages> {
           color: MyColors.white,
         ),
       ),
-      // body: ListView(
-      //   children: [
-      //     for (int i = 0; i < senders.length; i++)
-      //       Container(
-      //         color: i % 2 == 0 ? MyColors.white01 : MyColors.white,
-      //         child: Padding(
-      //           padding: const EdgeInsets.all(20),
-      //           child: Row(
-      //             crossAxisAlignment: CrossAxisAlignment.start,
-      //             children: [
-      //               Padding(
-      //                 padding: const EdgeInsets.only(right: 10,top: 2),
-      //                 child: Text(
-      //                   "${i + 1}.",
-      //                   style: boldTextStyle(fontSize: 15),
-      //                 ),
-      //               ),
-      //               Expanded(
-      //                 child: Column(
-      //                   crossAxisAlignment: CrossAxisAlignment.start,
-      //                   children: [
-      //                     buildInfoRow('Name : ', senders[i].name),
-      //                     const Divider(),
-      //                     buildInfoRow('Email : ', senders[i].email),
-      //                     const Divider(),
-      //                     buildInfoRow('Subject : ', senders[i].subject),
-      //                     const Divider(),
-      //                     buildInfoRow('Message : ', senders[i].message),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //       ),
-      //   ],
-      // ),
+      body: StreamBuilder(
+        stream: FirebaseFirestore.instance.collection("Contacts").orderBy("time", descending: true).snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.active) {
+            if (snapshot.hasData) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Container(
+                          color: index % 2 == 0 ? MyColors.white01 : MyColors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 10,top: 2),
+                                  child: Text(
+                                    "${index + 1}.",
+                                    style: boldTextStyle(fontSize: 15),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      buildInfoRow('Name : ', snapshot.data!.docs[index]['name']),
+                                      const Divider(),
+                                      buildInfoRow('Email : ', snapshot.data!.docs[index]['email']),
+                                      const Divider(),
+                                      buildInfoRow('Subject : ', snapshot.data!.docs[index]['subject']),
+                                      const Divider(),
+                                      buildInfoRow('Message : ', snapshot.data!.docs[index]['message']),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                      itemCount: snapshot.data!.docs.length,
+                    ),
+                  ),
+                ],
+              );
+            }
+            else if (snapshot.hasError) {
+              return Center(
+                child: Text(snapshot.hasError.toString()),
+              );
+            }
+            else {
+              return const Center(
+                child: Text('No Data Found!'),
+              );
+            }
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
     );
   }
 

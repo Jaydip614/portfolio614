@@ -18,7 +18,6 @@ import 'package:jaydipbaraiya/widgets/custom_drawer.dart';
 import 'package:jaydipbaraiya/widgets/message_button.dart';
 import 'package:jaydipbaraiya/widgets/mobile_menu.dart';
 import 'package:jaydipbaraiya/widgets/navigation_bar.dart';
-import 'package:jaydipbaraiya/widgets/uiux_portfolio.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -117,7 +116,11 @@ class _HomePageState extends State<HomePage> {
                     scaffoldKey.currentState?.openDrawer();
                   },
                 ),
-              const MessageMeButton(),
+              MessageMeButton(
+                onPressed: () {
+                  scrollToSection(0);
+                },
+              ),
               // const UiUxPortfolio(),
             ],
           ),

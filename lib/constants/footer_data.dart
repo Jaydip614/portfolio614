@@ -1,10 +1,10 @@
 
 String title = 'JAYDIP BARAIYA';
 
-String subTitle = "A Frontend focused Web Developer building the Frontend of Websites and "
+String subTitle = "A Full Stack Flutter Developer building the Mobile applications and "
     "Web Applications that leads to the success of the overall product";
 
-String portfolioLink = '';
+String portfolioLink = 'https://Jaydip614.github.io/portfolio/';
 
 List<Map> socialLinks = [
   {

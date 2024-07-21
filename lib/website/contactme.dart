@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:jaydipbaraiya/styles/textstyles.dart';
 import 'package:jaydipbaraiya/widgets/rectangle_button.dart';
@@ -30,11 +31,9 @@ class _WebContactMeState extends State<WebContactMe> {
   String _message = '';
 
   void _showMessage() async {
-
     setState(() {
       _isError = false;
     });
-
     Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         _isSend = true;
@@ -45,13 +44,26 @@ class _WebContactMeState extends State<WebContactMe> {
         yourMessage.text = '';
       });
     });
-
     Future.delayed(const Duration(seconds: 6), () {
       setState(() {
         _isSend = false;
       });
     });
   }
+
+  addDetails(String email, String name, String subject, String message, String time) async {
+
+      FirebaseFirestore.instance.collection("Contacts").doc(email).set({
+        "email" : email,
+        "name" : name,
+        "subject" : subject,
+        "message" : message,
+        'time' : time,
+      }).then((value) {
+        print("Data inserted successfully");
+      },);
+  }
+
 
   void _showErrorMessage(){
     setState(() {
@@ -61,9 +73,6 @@ class _WebContactMeState extends State<WebContactMe> {
       }
       else if(yourEmail.text.isEmpty){
         _message = "Please Enter your Email";
-      }
-      else if(!Sender.isValidGmail(yourEmail.text)){
-        _message = "Please Enter Valid Email";
       }
       else if(yourMessage.text.isEmpty){
         _message = "Please Enter Your Message";
@@ -148,7 +157,14 @@ class _WebContactMeState extends State<WebContactMe> {
                                   RectangleButton(
                                     onPressed: () {
                                       if(yourName.text.isNotEmpty && yourEmail.text.isNotEmpty &&
-                                          yourMessage.text.isNotEmpty && Sender.isValidGmail(yourEmail.text.toString())){
+                                          yourMessage.text.isNotEmpty){
+                                        addDetails(
+                                            yourName.text.toString(),
+                                            yourName.text.toString(),
+                                            subject.text.toString(),
+                                            yourMessage.text.toString(),
+                                            DateTime.now().toString(),
+                                        );
                                         _showMessage();
                                       }
                                       else{
