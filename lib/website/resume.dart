@@ -4,6 +4,7 @@ import 'package:jaydipbaraiya/styles/textstyles.dart';
 import 'package:jaydipbaraiya/widgets/custom_timeline.dart';
 import 'package:jaydipbaraiya/widgets/rectangle_button.dart';
 import 'dart:js' as js;
+import 'dart:html' as html;
 
 import '../widgets/page_title.dart';
 
